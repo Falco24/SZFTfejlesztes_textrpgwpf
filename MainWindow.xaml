@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="190" Width="400"/>
+        <TextBlock x:Name="Str" HorizontalAlignment="Left" Margin="400,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" AutomationProperties.Name="Str" Initialized="TextBlock_Initialized"/>
+        <TextBlock x:Name="Dex" HorizontalAlignment="Left" Margin="400,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" AutomationProperties.Name="Dex" Initialized="Dex_Initialized"/>
+        <TextBlock x:Name="Int" HorizontalAlignment="Left" Margin="400,52,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" AutomationProperties.Name="Int" Initialized="Int_Initialized"/>
+        <TextBlock x:Name="Cha" HorizontalAlignment="Left" Margin="400,73,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" AutomationProperties.Name="Cha" Initialized="Cha_Initialized"/>
+        <TextBlock x:Name="Fear" HorizontalAlignment="Left" Margin="400,94,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" AutomationProperties.Name="Fear" Initialized="Fear_Initialized"/>
+        <Button x:Name="Str_plus" Content="+" HorizontalAlignment="Left" Margin="495,10,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Str_plus_Click"/>
+        <Button x:Name="Str_minus" Content="-" HorizontalAlignment="Left" Margin="530,10,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Str_minus_Click"/>
+        <Button x:Name="Dex_plussz" Content="+" HorizontalAlignment="Left" Margin="495,31,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Dex_plussz_Click"/>
+        <Button x:Name="Dex_minus" Content="-" HorizontalAlignment="Left" Margin="530,31,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Dex_minus_Click"/>
+        <Button x:Name="Int_plussz" Content="+" HorizontalAlignment="Left" Margin="495,52,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Int_plussz_Click"/>
+        <Button x:Name="Int_minus" Content="-" HorizontalAlignment="Left" Margin="530,52,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Int_minus_Click"/>
+        <Button x:Name="Cha_plussz" Content="+" HorizontalAlignment="Left" Margin="495,73,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Cha_plussz_Click"/>
+        <Button x:Name="Cha_minus" Content="-" HorizontalAlignment="Left" Margin="530,73,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Cha_minus_Click"/>
+        <TextBlock x:Name="Xp_bar" HorizontalAlignment="Left" Margin="405,134,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145" TextAlignment="Center"/>
+        <Button x:Name="xp_dev_add" Content="+" HorizontalAlignment="Left" Margin="555,134,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="xp_dev_add_Click"/>
+
+    </Grid>
+</Window>
