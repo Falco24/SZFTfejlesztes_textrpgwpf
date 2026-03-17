@@ -23,6 +23,7 @@
         <Button x:Name="Cha_minus" Content="-" HorizontalAlignment="Left" Margin="530,73,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="Cha_minus_Click"/>
         <TextBlock x:Name="Xp_bar" HorizontalAlignment="Left" Margin="405,134,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="145" TextAlignment="Center"/>
         <Button x:Name="xp_dev_add" Content="+" HorizontalAlignment="Left" Margin="555,134,0,0" VerticalAlignment="Top" Width="20" Height="16" FontSize="8" Click="xp_dev_add_Click"/>
+        <TextBlock x:Name="Skill_points_rn" HorizontalAlignment="Left" Margin="453,155,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

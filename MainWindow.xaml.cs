@@ -18,56 +18,124 @@ namespace WpfApp1
     {
         int current_xp = 0;
         int max_xp = 100;
+        int skill_point = 6;
+
+
+        int strng = 10;
+        int dex = 10;
+        int intel = 10;
+        int cha = 10;
+        int fear = 0;
 
         private void XP_bar_lvlup()
         {
-            current_xp = 0;
-            max_xp = (int)(1.08 * max_xp);
+            current_xp = current_xp - max_xp;
+            max_xp = (int)(1.2 * max_xp);
+            skill_point++;
+            Skill_points_rn_Initialized();
+            Skill_point_check();
             Xp_bar.Text = $"XP : {current_xp} / {max_xp}";
             MessageBox.Show("Level Up!");
         }
+        
+        private void Skill_point_check()
+        {
+            if (skill_point == 0)
+            {
+                Str_plus.IsEnabled = false;
+                Dex_plussz.IsEnabled = false;
+                Int_plussz.IsEnabled = false;
+                Cha_plussz.IsEnabled = false;
+            }
 
+            if (strng > 10)
+            {
+                Str_minus.IsEnabled = true;
+            }
+
+            else
+            {
+                Str_minus.IsEnabled = false;
+            }
+
+            if (dex > 10)
+            {
+                Dex_minus.IsEnabled = true;
+            }
+
+            else 
+
+            if (intel == 10)
+            {
+                Int_minus.IsEnabled = false;
+            }
+
+            if (cha == 10)
+            {
+                Cha_minus.IsEnabled = false;
+            }
+
+            if (skill_point > 0 )
+            {
+                Str_plus.IsEnabled = true;
+                Dex_plussz.IsEnabled = true;
+                Int_plussz.IsEnabled = true;
+                Cha_plussz.IsEnabled = true;
+            }
+        }
+        
         public MainWindow()
         {
             InitializeComponent();
-            
+            Xp_bar_Initialized();
+            Skill_point_check();
+            Skill_points_rn_Initialized();
+
         }
 
 
         private void TextBlock_Initialized(object sender, EventArgs e) // str textblock
         {
-            Str.Text = "Strength : 10";
+            Str.Text = $"Strength : {strng}";
         }
 
         private void Dex_Initialized(object sender, EventArgs e) // dex textblock
         {
-            Dex.Text = "Dexterity : 10";
+            Dex.Text = $"Dexterity : {dex}";
         }
 
         private void Int_Initialized(object sender, EventArgs e) // int textblock
         {
-            Int.Text = "Intelligence : 10";
+            Int.Text = $"Intelligence : {intel}";
         }
 
         private void Cha_Initialized(object sender, EventArgs e) // cha textblock
         {
-            Cha.Text = "Charisma : 10";
+            Cha.Text = $"Charisma : {cha}";
         }
 
         private void Fear_Initialized(object sender, EventArgs e) // fear textblock
         {
-            Fear.Text = "Fear : 0";
+            Fear.Text = $"Fear : {fear}";
         }
 
         private void Str_plus_Click(object sender, RoutedEventArgs e)
         {
+            skill_point--;
+            strng++;
+            Skill_point_check();
             Str.Text = "Strength : " + (int.Parse(Str.Text.Split(':')[1].Trim()) + 1).ToString();
-            
+            Skill_points_rn_Initialized();
+
         }
 
         private void Str_minus_Click(object sender, RoutedEventArgs e)
         {
+            skill_point++;
+            strng--;
+            Skill_point_check();
             Str.Text = "Strength : " + (int.Parse(Str.Text.Split(':')[1].Trim()) - 1).ToString();
+            Skill_points_rn_Initialized();
         }
 
         private void Dex_plussz_Click(object sender, RoutedEventArgs e)
@@ -105,12 +173,17 @@ namespace WpfApp1
             Xp_bar.Text = $"XP : {current_xp} / {max_xp}";
         }
 
+        private void Skill_points_rn_Initialized()
+        {
+            Skill_points_rn.Text = $"Skill Points : {skill_point}";
+        }
+
         private void xp_dev_add_Click(object sender, RoutedEventArgs e)
         {
             
             current_xp += 10;
             Xp_bar_Initialized();
-            if (current_xp >= 100)
+            if (current_xp >= max_xp)
             {
                 XP_bar_lvlup();
             }
